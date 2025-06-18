@@ -7,9 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
   TrendingUp,
-  Wallet,
   Coins,
-  BarChart3,
   Zap,
   Globe,
   ArrowUpRight,
