@@ -15,7 +15,6 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   RefreshCw,
-  Copy,
   ExternalLink,
 } from "lucide-react";
 
@@ -123,24 +122,11 @@ export default function Home() {
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-white">TokenVault</h1>
+                <h1 className="text-xl font-bold text-white">EcoRewards</h1>
                 <p className="text-sm text-gray-400">
-                  Solana-Pegged Token Platform
+                  Turn trash into digital cash!
                 </p>
               </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Badge
-                variant="outline"
-                className="border-green-500/50 text-green-400 bg-green-500/10"
-              >
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-                Live
-              </Badge>
-              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                <Wallet className="w-4 h-4 mr-2" />
-                Connect Wallet
-              </Button>
             </div>
           </div>
         </div>
@@ -150,25 +136,6 @@ export default function Home() {
       <main className="relative z-10 container mx-auto px-4 py-8">
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-gray-400 flex items-center gap-2">
-                <BarChart3 className="w-4 h-4" />
-                Current Index
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-white mb-1">
-                {isLoading ? (
-                  <div className="w-20 h-6 bg-gray-600 rounded animate-pulse"></div>
-                ) : (
-                  formatNumber(tokenData.currentIndex)
-                )}
-              </div>
-              <p className="text-xs text-gray-400">Token Position</p>
-            </CardContent>
-          </Card>
-
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-gray-400 flex items-center gap-2">
@@ -252,7 +219,7 @@ export default function Home() {
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
                     <Zap className="w-4 h-4 text-white" />
                   </div>
-                  TokenVault (TVT)
+                  EcoRewards (TVT)
                 </CardTitle>
                 <Button
                   variant="ghost"
@@ -268,27 +235,16 @@ export default function Home() {
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Price Chart Placeholder */}
-              <div className="h-48 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center border border-white/10">
-                <div className="text-center">
-                  <BarChart3 className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-400 text-sm">Price Chart</p>
-                  <p className="text-gray-500 text-xs">
-                    Real-time data visualization
-                  </p>
-                </div>
-              </div>
-
               {/* Token Metrics */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <p className="text-sm text-gray-400">24h Volume</p>
+                  <p className="text-sm text-gray-400">24h Volume SOLANA</p>
                   <p className="text-lg font-semibold text-white">
                     ${formatNumber(tokenData.volume24h)}
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <p className="text-sm text-gray-400">Market Cap</p>
+                  <p className="text-sm text-gray-400">Market Cap SOLANA</p>
                   <p className="text-lg font-semibold text-white">
                     ${formatNumber(tokenData.marketCap)}
                   </p>
@@ -343,42 +299,6 @@ export default function Home() {
               </Button>
             </CardContent>
           </Card>
-        </div>
-
-        {/* Quick Actions */}
-        <div className="mt-8">
-          <h2 className="text-xl font-bold text-white mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Button className="h-16 bg-white/5 border border-white/10 hover:bg-white/10 text-white justify-start">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mr-3">
-                <Coins className="w-5 h-5" />
-              </div>
-              <div className="text-left">
-                <p className="font-medium">Stake Tokens</p>
-                <p className="text-sm text-gray-400">Earn rewards</p>
-              </div>
-            </Button>
-
-            <Button className="h-16 bg-white/5 border border-white/10 hover:bg-white/10 text-white justify-start">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center mr-3">
-                <TrendingUp className="w-5 h-5" />
-              </div>
-              <div className="text-left">
-                <p className="font-medium">Trade</p>
-                <p className="text-sm text-gray-400">Buy/Sell tokens</p>
-              </div>
-            </Button>
-
-            <Button className="h-16 bg-white/5 border border-white/10 hover:bg-white/10 text-white justify-start">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center mr-3">
-                <Copy className="w-5 h-5" />
-              </div>
-              <div className="text-left">
-                <p className="font-medium">Portfolio</p>
-                <p className="text-sm text-gray-400">View holdings</p>
-              </div>
-            </Button>
-          </div>
         </div>
       </main>
     </div>
